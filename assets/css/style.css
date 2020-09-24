@@ -1,0 +1,157 @@
+body {
+	background-color: black;
+	min-height: 100vh;
+	font-family: Ubuntu, sans-serif;
+	overflow: hidden;
+}
+main {
+	padding: 10px;
+	box-sizing: border-box;
+}
+main > section {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	padding-top: 10px;
+	box-sizing: border-box;
+	min-height: calc(100vh - 25px - 20px);
+}
+
+#settings-toggle {
+	height: 25px;
+	display: block;
+	margin: 0 0 0 auto;
+	cursor: pointer;
+}
+#backdrop {
+	display: none;
+	z-index: 100;
+	position: fixed;
+	background-color: rgba(0,0,0,0.8);
+	height: 100vh;
+	width: 100%;
+}
+#settings-popup {
+	display: none;
+	z-index: 101;
+	position: fixed;
+	top: 0;
+	right: 0;
+	background-color: white;
+	padding: 10px;
+}
+#settings-close {
+	background-image: url('../img/close.png');
+	background-size: cover;
+	width: 20px;
+	height: 20px;
+	cursor: pointer;
+	margin-left: auto;
+}
+#settings-form {
+	margin-top: 25px;
+}
+#settings-form > div {
+	display: flex;
+	justify-content: space-between;
+	margin-bottom: 5px;
+}
+#settings-form label {
+	font-weight: bold;
+}
+#settings-form > div > input {
+	width: 50px;
+	margin-left: 10px;
+}
+#settings-submit {
+	cursor: pointer;
+}
+
+#grid {
+	background-color: white;
+	position: relative;
+}
+.pixel {
+	position: absolute;
+	box-sizing: border-box;
+}
+.snake {
+	background: linear-gradient(90deg, rgb(236, 30, 30), orange, yellow, lightgreen, lightblue, rgb(212, 10, 212));
+}
+.snake[type="turn-1"] {
+	background: radial-gradient(circle at top right, rgb(212, 10, 212), lightblue, lightgreen, yellow, orange, rgb(236, 30, 30) 70%, transparent 73%);
+}
+.snake[type="turn-2"] {
+	background: radial-gradient(circle at top left, rgb(236, 30, 30), orange, yellow, lightgreen, lightblue, rgb(212, 10, 212) 70%, transparent 73%);
+}
+.snake[type="tail"] {
+	border-radius: 0% 0% 50% 50%;
+}
+.snake[type="head"] {
+	background: url('../img/unicorn.png');
+	background-size: cover;	
+}
+.fruit {background-size: cover;}
+.fruit[type="apple"] {background-image: url('../img/apple.png');}
+.fruit[type="banana"] {background-image: url('../img/banana.png');}
+.fruit[type="strawberry"] {background-image: url('../img/strawberry.png');}
+.fruit[type="orange"] {background-image: url('../img/orange.png');}
+.fruit[type="kiwi"] {background-image: url('../img/kiwi.png');}
+
+.score {
+	font-size: 24px;
+	color: white;
+	margin: 30px 0 10px;
+}
+.score > span {
+	font-weight: bold;
+}
+
+#d-pad {
+	display: none;
+	position: relative;
+	height: 150px;
+	width: 150px;
+}
+#d-pad > .pad {
+	width: 50px;
+	height: 50px;
+}
+#d-pad > .pad > img {
+	width: 100%;
+	height: 100%;
+	cursor: pointer;
+}
+#d-pad > .pad {
+	position: absolute;
+}
+#d-pad > .pad[direction="up"] {
+	top: 0;
+	left: calc(50% - 25px);
+	transform: rotate(-90deg);
+}
+#d-pad > .pad[direction="right"] {
+	right: 0;
+	top: calc(50% - 25px);
+}
+#d-pad > .pad[direction="down"] {
+	bottom: 0;
+	left: calc(50% - 25px);
+	left: calc(50% - 25px);
+	transform: rotate(90deg);
+}
+#d-pad > .pad[direction="left"] {
+	left: 0;
+	top: calc(50% - 25px);
+	transform: rotate(180deg);
+}
+#d-pad > .pad-center {
+	position: absolute;
+	top: calc(50% - 20px);
+	left: calc(50% - 20px);
+	width: 40px;
+	height: 40px;
+	background-color: rgb(90, 90, 90);
+	border-radius: 50%;
+}

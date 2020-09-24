@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Snake</title>
+	<link rel="stylesheet" href="assets/css/reset.css">
+	<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+	<div id="settings-popup">
+		<div id="settings-close"></div>
+		<form id="settings-form">
+			<div class="sett-grid-x">
+				<label for="grid-x">Grid X: </label>
+				<input type="number" name="grid-x" id="grid-x">
+			</div>
+			<div class="sett-grid-y">
+				<label for="grid-y">Grid Y: </label>
+				<input type="number" name="grid-y" id="grid-y">
+			</div>
+			<div class="sett-pixel-size">
+				<label for="pixel-size">Pixel Size (px): </label>
+				<input type="number" name="pixel-size" id="pixel-size">
+			</div>
+			<div class="sett-length-init">
+				<label for="length-init">Length Init: </label>
+				<input type="number" name="length-init" id="length-init">
+			</div>
+			<div class="sett-speed">
+				<label for="speed">Speed (ms): </label>
+				<input type="number" name="speed" id="speed">
+			</div>
+			<div class="sett-fruit-quantity">
+				<label for="fruit-quantity">Fruit Quantity: </label>
+				<input type="number" name="fruit-quantity" id="fruit-quantity">
+			</div>
+			<div class="sett-d-pad-display">
+				<label for="d-pad-display">Dpad: </label>
+				<input type="checkbox" name="d-pad-display" id="d-pad-display">
+			</div>
+			<input type="submit" value="Submit">
+		</form>
+	</div>
+	<div id="backdrop"></div>
+	<main>
+		<button id="settings-toggle">Settings</button>
+		<section>
+			<div id="grid"></div>
+			<p class="score">Score : <span></span></p>
+			<div id="d-pad">
+				<div class="pad" direction="up"><img src="assets/img/arrow.svg" alt=""></div>
+				<div class="pad" direction="right"><img src="assets/img/arrow.svg" alt=""></div>
+				<div class="pad" direction="down"><img src="assets/img/arrow.svg" alt=""></div>
+				<div class="pad" direction="left"><img src="assets/img/arrow.svg" alt=""></div>
+				<div class="pad-center"></div>
+			</div>
+		</section>
+	</main>
+	<script src="assets/js/init.js"></script>
+	<script src="assets/js/game.js"></script>
+	<script src="assets/js/main.js"></script>
+</body>
+</html>
