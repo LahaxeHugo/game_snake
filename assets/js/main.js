@@ -42,7 +42,6 @@ function dPadToggle(toggle = false) {
 
 function startLoop() {
 	snakeLoop = setInterval(function() {
-		console.log('loop');
 		if(direction !== 'none' && popupOpen === false) {
 			if(['updown','downup', 'rightleft', 'leftright'].includes(direction+directionPrev)) {
 				direction = directionPrev;
