@@ -42,6 +42,7 @@ function dPadToggle(toggle = false) {
 
 function startLoop() {
 	snakeLoop = setInterval(function() {
+		console.log('loop');
 		if(direction !== 'none' && popupOpen === false) {
 			if(['updown','downup', 'rightleft', 'leftright'].includes(direction+directionPrev)) {
 				direction = directionPrev;
@@ -73,8 +74,8 @@ settDPadDisplay.checked = dPadShow;
 dPadToggle(dPadShow);
 
 settingsToggle.addEventListener('click', () => { popupToggle(true); });
-settingsClose.addEventListener('click', popupToggle);
-backdrop.addEventListener('click', popupToggle);
+settingsClose.addEventListener('click', () => { popupToggle(); });
+backdrop.addEventListener('click', () => { popupToggle(); });
 
 // Settings Update
 settingsForm.addEventListener('submit', e => {
@@ -88,8 +89,8 @@ settingsForm.addEventListener('submit', e => {
 	dPadToggle(settDPadDisplay.checked);
 
 	clearInterval(snakeLoop);
+	snakeLoop = false;
 	gridGenerate();
-	startLoop();
 	popupToggle();
 });
 
