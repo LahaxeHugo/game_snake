@@ -3,12 +3,14 @@ const gridDisplay = document.getElementById('grid');
 const scoreEl = document.querySelector('.score > span');
 scoreEl.innerHTML = 0;
 
-// Settings Input
+// Popup
 const backdrop = document.getElementById('backdrop');
 const settingsPopup = document.getElementById('settings-popup');
 const settingsToggle = document.getElementById('settings-toggle');
 const settingsClose = document.getElementById('settings-close');
 const settingsForm = document.getElementById('settings-form');
+
+// Settings Input
 const settGridX = document.getElementById('grid-x');
 const settGridY = document.getElementById('grid-y');
 const settPixelSize = document.getElementById('pixel-size');
