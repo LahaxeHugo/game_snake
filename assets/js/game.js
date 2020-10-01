@@ -1,7 +1,7 @@
 function gridGenerate() {
 	gridDisplay.style.width = gridSize.x*pixelSize+'px';
 	gridDisplay.style.height = gridSize.y*pixelSize+'px';
-	direction = 'none'; directionPrev = 'none'; directionInit = true;
+	direction = 'none'; directionPrev = 'none';
 	fruitQuantityCurr = 0;
 	scoreReset = true;
 
@@ -110,8 +110,8 @@ function fruitGenerate(quantity = 1) {
 	}
 	for (let i = 0; i < quantity; i++) {
 		if(emptyPixel.length !== 0) {
-			let random = Math.floor(Math.random()*emptyPixel.length)+1;
-			let fruit = emptyPixel[random-1];
+			let random = Math.floor(Math.random()*emptyPixel.length);
+			let fruit = emptyPixel[random];
 			grid[fruit.y][fruit.x] = 2;
 			fruitQuantityCurr++;
 			
