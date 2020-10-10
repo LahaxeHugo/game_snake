@@ -5,11 +5,11 @@ function gridGenerate() {
 	fruitQuantityCurr = 0;
 	scoreReset = true;
 
-	grid = {};
+	grid = [];
 	gridDisplay.innerHTML = '';
 
 	for (let i = 0; i < gridSize.y; i++) {
-		grid[i] = {};
+		grid[i] = [];
 		for(let j = 0; j < gridSize.x; j++) {
 			grid[i][j] = 0;
 			let pixel = document.createElement('div');

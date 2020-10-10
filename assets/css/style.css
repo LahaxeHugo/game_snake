@@ -77,20 +77,22 @@ main > section {
 	box-sizing: border-box;
 }
 .snake {
-	background: linear-gradient(90deg, rgb(236, 30, 30), orange, yellow, lightgreen, lightblue, rgb(212, 10, 212));
+	background-image: linear-gradient(90deg, rgb(236, 30, 30), orange, yellow, lightgreen, lightblue, rgb(212, 10, 212));
+	background-repeat: no-repeat;
+	background-position: center;
 }
 .snake[type="turn-1"] {
-	background: radial-gradient(circle at top right, rgb(212, 10, 212), lightblue, lightgreen, yellow, orange, rgb(236, 30, 30) 70%, transparent 73%);
+	background-image: radial-gradient(circle at top right, rgb(212, 10, 212), lightblue, lightgreen, yellow, orange, rgb(236, 30, 30) 70%, transparent 73%);
 }
 .snake[type="turn-2"] {
-	background: radial-gradient(circle at top left, rgb(236, 30, 30), orange, yellow, lightgreen, lightblue, rgb(212, 10, 212) 70%, transparent 73%);
+	background-image: radial-gradient(circle at top left, rgb(236, 30, 30), orange, yellow, lightgreen, lightblue, rgb(212, 10, 212) 70%, transparent 73%);
 }
 .snake[type="tail"] {
 	border-radius: 0% 0% 50% 50%;
 }
 .snake[type="head"] {
 	background: url('../img/unicorn.png');
-	background-size: cover;	
+	background-size: cover;
 }
 .fruit {background-size: cover;}
 .fruit[type="apple"] {background-image: url('../img/apple.png');}
@@ -98,6 +100,7 @@ main > section {
 .fruit[type="strawberry"] {background-image: url('../img/strawberry.png');}
 .fruit[type="orange"] {background-image: url('../img/orange.png');}
 .fruit[type="kiwi"] {background-image: url('../img/kiwi.png');}
+.fruit[type="cheese"] {background-image: url('../img/cheese.png');}
 
 .score {
 	font-size: 24px;
@@ -106,52 +109,4 @@ main > section {
 }
 .score > span {
 	font-weight: bold;
-}
-
-#d-pad {
-	display: none;
-	position: relative;
-	height: 150px;
-	width: 150px;
-}
-#d-pad > .pad {
-	width: 50px;
-	height: 50px;
-}
-#d-pad > .pad > img {
-	width: 100%;
-	height: 100%;
-	cursor: pointer;
-}
-#d-pad > .pad {
-	position: absolute;
-}
-#d-pad > .pad[direction="up"] {
-	top: 0;
-	left: calc(50% - 25px);
-	transform: rotate(-90deg);
-}
-#d-pad > .pad[direction="right"] {
-	right: 0;
-	top: calc(50% - 25px);
-}
-#d-pad > .pad[direction="down"] {
-	bottom: 0;
-	left: calc(50% - 25px);
-	left: calc(50% - 25px);
-	transform: rotate(90deg);
-}
-#d-pad > .pad[direction="left"] {
-	left: 0;
-	top: calc(50% - 25px);
-	transform: rotate(180deg);
-}
-#d-pad > .pad-center {
-	position: absolute;
-	top: calc(50% - 20px);
-	left: calc(50% - 20px);
-	width: 40px;
-	height: 40px;
-	background-color: rgb(90, 90, 90);
-	border-radius: 50%;
 }
